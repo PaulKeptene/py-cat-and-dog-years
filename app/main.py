@@ -3,10 +3,9 @@ def get_human_age(cat_age: int, dog_age: int) -> list:
     cat_age_divider = 4
     dog_age_divider = 5
 
-    def validate_age(age: int, animal_name: str) -> int | None:
-        if not isinstance(age, (int, float)):
+    def validate_age(age: int, animal_name: str) -> int:
+        if not isinstance(age, int):
             raise TypeError(f"{animal_name} age must be a number")
-        age = int(age)
 
         if age < 0:
             raise ValueError(f"{animal_name} age cannot be negative")
